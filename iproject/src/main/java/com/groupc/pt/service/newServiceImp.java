@@ -19,18 +19,18 @@ public class newServiceImp implements newService {
 
    @Transactional
    @Override
-   public long save(Kuser Kuser) {
-      return KuserDao.save(Kuser);
+   public long save(Kuser usr) {
+      return KuserDao.save(usr);
    }
    
 
    @Override
-   public Kuser get(long id) {
+   public Kuser getU(long id) {
       return KuserDao.get(id);
    }
 
    @Override
-   public List<Kuser> list() {
+   public List<Kuser> userlist() {
       return KuserDao.list();
    }
 
@@ -42,8 +42,10 @@ public class newServiceImp implements newService {
 
    @Transactional
    @Override
-   public void delete(long id) {
-      KuserDao.delete(id);
+   public void deleteU(long id) {
+      KuserDao.deleteU(id);
    }
+
+
 
 }

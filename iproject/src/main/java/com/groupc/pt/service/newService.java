@@ -3,13 +3,13 @@ package com.groupc.pt.service;
 import java.util.List;
 
 import com.groupc.pt.model.*;
-//import com.boraji.tutorial.spring.model.theProject;
 
 public interface newService {
-
+//user
    long save(Kuser Kuser);
-   Kuser get(long id);
-   List<Kuser> list();
+   Kuser getU(long id);
+   List<Kuser> userlist();
    void update(long id, Kuser Kuser);
-   void delete(long id);
+   void deleteU(long id);
+
 }

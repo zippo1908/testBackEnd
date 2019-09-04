@@ -17,7 +17,7 @@ import com.groupc.pt.model.Kuser;
 import com.groupc.pt.service.newService;
 
 @RestController
-public class KuserController {
+public class KuserController{
 
    @Autowired
    private newService newService;
@@ -33,14 +33,14 @@ public class KuserController {
    /*---Get a user by id---*/
    @GetMapping("/user/{id}")
    public ResponseEntity<Kuser> get(@PathVariable("id") long id) {
-      Kuser Kuser = newService.get(id);
+      Kuser Kuser = newService.getU(id);
       return ResponseEntity.ok().body(Kuser);
    }
 
    /*---get all users---*/
    @GetMapping("/user")
    public ResponseEntity<List<Kuser>> list() {
-      List<Kuser> Kusers = newService.list();
+      List<Kuser> Kusers = newService.userlist();
       return ResponseEntity.ok().body(Kusers);
    }
 
@@ -54,7 +54,8 @@ public class KuserController {
    /*---Delete a user by id---*/
    @DeleteMapping("/user/{id}")
    public ResponseEntity<?> delete(@PathVariable("id") long id) {
-      newService.delete(id);
+      newService.deleteU(id);
       return ResponseEntity.ok().body("user has been deleted successfully.");
    }
+   
 }

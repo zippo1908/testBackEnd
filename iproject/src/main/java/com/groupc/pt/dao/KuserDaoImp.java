@@ -52,7 +52,7 @@ public class KuserDaoImp implements KuserDao {
    }
 
    @Override
-   public void delete(long id) {
+   public void deleteU(long id) {
       Session session = sessionFactory.getCurrentSession();
       Kuser Kuser = session.byId(Kuser.class).load(id);
       session.delete(Kuser);

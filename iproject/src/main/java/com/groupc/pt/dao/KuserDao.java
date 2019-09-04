@@ -14,6 +14,6 @@ public interface KuserDao {
 
    void update(long id, Kuser Kuser);
 
-   void delete(long id);
+   void deleteU(long id);
 
 }
