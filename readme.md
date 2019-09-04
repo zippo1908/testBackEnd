@@ -3,7 +3,9 @@ Current Testing Environment
 For Eclipse using : 
 
 1.File -> Import -> Existing Maven Project
+
 2.Redirect the SQL to your own local environment
+
 3.For the first time using this project, please change the values under :
    src/main/recources/db.properties
    hibernate.hbm2ddl.auto=create
