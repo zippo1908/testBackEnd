@@ -52,7 +52,7 @@ public class projectController {
 	   /*---Delete a user by id---*/
 	   @DeleteMapping("/project/{id}")
 	   public ResponseEntity<?> delete(@PathVariable("id") long id) {
-		   projectService.deleteU(id);
+		  projectService.deleteU(id);
 	      return ResponseEntity.ok().body("project"+id+" has been deleted successfully.");
 	   }
 }
