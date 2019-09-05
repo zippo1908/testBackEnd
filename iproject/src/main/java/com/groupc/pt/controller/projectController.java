@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.groupc.pt.model.Kuser;
+import com.groupc.pt.model.user;
 import com.groupc.pt.model.userProject;
 import com.groupc.pt.service.projectService;
 
