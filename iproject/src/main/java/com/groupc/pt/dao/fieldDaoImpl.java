@@ -57,6 +57,7 @@ public class fieldDaoImpl implements fieldDao {
       Session session = sessionFactory.getCurrentSession();
       userField userField = session.byId(userField.class).load(id);
       session.delete(userField);
+      session.flush();
    }
 
 }

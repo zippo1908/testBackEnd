@@ -12,6 +12,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.groupc.pt.model.Kuser;
 import com.groupc.pt.model.userProject;
 
 @Repository
@@ -50,9 +51,10 @@ public class projectDaoImpl implements projectDao{
 	   }
 	@Override
 	public void deleteU(long id) {
-	      Session session = sessionFactory.getCurrentSession();
-	      userProject Kuser = session.byId(userProject.class).load(id);
-	      session.delete(Kuser);
+	      Session sc = sessionFactory.getCurrentSession();
+	      userProject Kuser = sc.byId(userProject.class).load(id);
+	      sc.delete(Kuser);
+	      sc.flush();
 	}
 
 }
