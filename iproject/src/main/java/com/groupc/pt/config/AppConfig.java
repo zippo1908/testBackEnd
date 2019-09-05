@@ -29,10 +29,10 @@ public class AppConfig {
 
       Properties props = new Properties();
       // Setting JDBC properties
-      props.put(DRIVER, env.getProperty("mysql.driver"));
-      props.put(URL, env.getProperty("mysql.url"));
-      props.put(USER, env.getProperty("mysql.user"));
-      props.put(PASS, env.getProperty("mysql.password"));
+      props.put(DRIVER, env.getProperty("SQL.driver"));
+      props.put(URL, env.getProperty("SQL.url"));
+      props.put(USER, env.getProperty("SQL.user"));
+      props.put(PASS, env.getProperty("SQL.password"));
 
       // Setting Hibernate properties
       props.put(DIALECT, env.getProperty("hibernate.dialect"));
