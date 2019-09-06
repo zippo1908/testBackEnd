@@ -7,29 +7,29 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.groupc.pt.dao.projectDao;
-import com.groupc.pt.model.userProject;
+import com.groupc.pt.model.Projects;
 @Service
 @Transactional(readOnly = true)
 public class projectServiceImpl implements projectService{
 	@Autowired
 	private projectDao projectDao;
 	@Override
-	public long save(userProject Kuser) {
+	public long save(Projects Kuser) {
 		return projectDao.save(Kuser);
 	}
 	
 	@Override
-	public userProject getU(long id) {
+	public Projects getU(long id) {
 		return projectDao.get(id);
 	}
 
 	@Override
-	public List<userProject> userlist() {
+	public List<Projects> userlist() {
 		return projectDao.list();
 	}
 
 	@Override
-	public void update(long id, userProject Kuser) {
+	public void update(long id, Projects Kuser) {
 		projectDao.update(id, Kuser);
 	}
 

@@ -2,7 +2,7 @@ package com.groupc.pt.service;
 
 import java.util.List;
 
-import com.groupc.pt.model.*;
+import com.groupc.pt.model.User;;
 
 public interface UserService {
 //user
@@ -11,5 +11,6 @@ public interface UserService {
    List<User> userlist();
    void update(long id, User User);
    void deleteU(long id);
+   Boolean autho(User user);
 
 }

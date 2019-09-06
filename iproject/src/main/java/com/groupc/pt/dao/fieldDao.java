@@ -2,16 +2,16 @@ package com.groupc.pt.dao;
 
 import java.util.List;
 
-import com.groupc.pt.model.userField;
+import com.groupc.pt.model.Fields;
 
 public interface fieldDao {
-	   long save(userField fl);
+	   long save(Fields fl);
 
-	   userField get(long id);
+	   Fields get(long id);
 
-	   List<userField> list();
+	   List<Fields> list();
 
-	   void update(long id, userField fl);
+	   void update(long id, Fields fl);
 
 	   void deleteU(long id);
 

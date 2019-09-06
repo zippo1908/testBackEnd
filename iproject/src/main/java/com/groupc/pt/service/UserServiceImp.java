@@ -47,5 +47,19 @@ public class UserServiceImp implements UserService {
    }
 
 
+   @Override
+   public Boolean autho(User user) {
+	System.out.println(user.getName());
+	System.out.println(user.getPassword());
+	String string = UserDao.getUbName(user.getName()).getPassword();
+	System.out.print(string);
+	if(string.equalsIgnoreCase(user.getPassword())) {
+		return true;
+	}
+	return false;
+
+}
+
+
 
 }

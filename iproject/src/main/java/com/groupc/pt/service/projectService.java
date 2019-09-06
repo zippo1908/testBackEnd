@@ -2,12 +2,12 @@ package com.groupc.pt.service;
 
 import java.util.List;
 
-import com.groupc.pt.model.userProject;
+import com.groupc.pt.model.Projects;
 
 public interface projectService {
-	   long save(userProject Kuser);
-	   userProject getU(long id);
-	   List<userProject> userlist();
-	   void update(long id, userProject Kuser);
+	   long save(Projects Kuser);
+	   Projects getU(long id);
+	   List<Projects> userlist();
+	   void update(long id, Projects Kuser);
 	   void deleteU(long id);
 }

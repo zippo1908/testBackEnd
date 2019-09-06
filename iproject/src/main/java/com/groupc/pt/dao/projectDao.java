@@ -2,17 +2,17 @@ package com.groupc.pt.dao;
 
 import java.util.List;
 
-import com.groupc.pt.model.userProject;
+import com.groupc.pt.model.Projects;
 
 
 public interface projectDao {
-	   long save(userProject Kuser);
+	   long save(Projects Kuser);
 
-	   userProject get(long id);
+	   Projects get(long id);
 
-	   List<userProject> list();
+	   List<Projects> list();
 
-	   void update(long id, userProject Kuser);
+	   void update(long id, Projects Kuser);
 
 	   void deleteU(long id);
 

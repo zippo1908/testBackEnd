@@ -6,14 +6,16 @@ import com.groupc.pt.model.User;
 
 public interface UserDao {
 
-   long save(User Kuser);
+   long save(User User);
 
    User get(long id);
 
    List<User> list();
 
-   void update(long id, User Kuser);
+   void update(long id, User User);
 
    void deleteU(long id);
+   
+   User getUbName(String name);
 
 }

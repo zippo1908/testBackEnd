@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -57,6 +56,17 @@ public class UserDaoImp implements UserDao {
       User User = session.byId(User.class).load(id);
       session.delete(User);
       session.flush();
+   }
+
+   @Override
+	public User getUbName(String name) {
+	   
+	   Session session = sessionFactory.getCurrentSession();
+	   Query hql = session.createQuery("From User as u where u.name=:name");
+	   hql.setParameter("name", name);
+	   User User = (User)hql.getSingleResult();
+	   return User;
+   
    }
 
 }

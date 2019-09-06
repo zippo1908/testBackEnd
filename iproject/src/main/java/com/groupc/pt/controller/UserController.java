@@ -20,42 +20,49 @@ import com.groupc.pt.service.UserService;
 public class UserController{
 
    @Autowired
-   private UserService UserService;
+   private UserService newService;
 
-   /*---Add User user---*/
+   /*---Add new user---*/
    @PostMapping("/user")
    public ResponseEntity<?> save(@RequestBody User User) {
-      long id = UserService.save(User);
-      return ResponseEntity.ok().body("User user has been saved with ID:" + id);
+      long id = newService.save(User);
+      return ResponseEntity.ok().body("New user has been saved with ID:" + id);
    }
    
 
    /*---Get a user by id---*/
    @GetMapping("/user/{id}")
    public ResponseEntity<User> get(@PathVariable("id") long id) {
-      User User = UserService.getU(id);
+      User User = newService.getU(id);
       return ResponseEntity.ok().body(User);
    }
 
    /*---get all users---*/
    @GetMapping("/user")
    public ResponseEntity<List<User>> list() {
-      List<User> Users = UserService.userlist();
+      List<User> Users = newService.userlist();
       return ResponseEntity.ok().body(Users);
    }
 
    /*---Update a user by id---*/
    @PutMapping("/user/{id}")
    public ResponseEntity<?> update(@PathVariable("id") long id, @RequestBody User User) {
-      UserService.update(id, User);
+      newService.update(id, User);
       return ResponseEntity.ok().body("user has been updated successfully.");
    }
 
    /*---Delete a user by id---*/
    @DeleteMapping("/user/{id}")
    public ResponseEntity<?> delete(@PathVariable("id") long id) {
-      UserService.deleteU(id);
+      newService.deleteU(id);
       return ResponseEntity.ok().body("user has been deleted successfully.");
+   }
+   
+   @GetMapping("/user/a")
+   public ResponseEntity<?> autho(@RequestBody User User){
+	   String str = null;
+	   if((newService.autho(User)== true)) str="Login Successfully";else str = "Failed to login";
+	   return ResponseEntity.ok().body(str);
    }
    
 }
