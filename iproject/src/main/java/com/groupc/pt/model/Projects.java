@@ -10,23 +10,11 @@ import javax.persistence.Id;
 
 @Entity(name = "Projects")
 public class Projects{	
+
 	   @Id
 	   @GeneratedValue(strategy = GenerationType.IDENTITY)
 	   private Long id;
 	   private String name;
-////	   
-////	   @Column(name = "projectName")
-////	   private String projectName;
-////	   
-////	   @OneToMany(mappedBy = "projects", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-////	   private Set<ProjectResources> projectResources = new HashSet<>();
-//	   
-//	   public Projects() {}
-//	   
-//	   public Projects(Long projectId, String projectName) {
-//		   this.projectName = projectName;
-//		   this.id = projectId;
-//	   }
 
 	   public Long getId() {
 	      return id;

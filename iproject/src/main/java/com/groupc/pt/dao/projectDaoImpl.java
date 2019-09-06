@@ -1,11 +1,9 @@
 package com.groupc.pt.dao;
 
 import java.util.List;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -20,9 +18,9 @@ public class projectDaoImpl implements projectDao{
 	private SessionFactory sessionFactory;
 
 	@Override
-	public long save(Projects Kuser) {
-	      sessionFactory.getCurrentSession().save(Kuser);
-	      return Kuser.getId();
+	public long save(Projects project) {
+	      sessionFactory.getCurrentSession().save(project);
+	      return project.getId();
 	}
 
 	@Override
@@ -42,10 +40,10 @@ public class projectDaoImpl implements projectDao{
 	   }
 
 	@Override
-	public void update(long id, Projects Kuser) {
+	public void update(long id, Projects project) {
 	      Session session = sessionFactory.getCurrentSession();
 	      Projects Kuser2 = session.byId(Projects.class).load(id);
-	      Kuser2.setName(Kuser.getName());
+	      Kuser2.setName(project.getName());
 	      session.flush();
 	   }
 	@Override
